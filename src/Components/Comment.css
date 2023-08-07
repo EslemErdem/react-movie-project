@@ -1,0 +1,120 @@
+/* Comment.css */
+.comment {
+  display: flex; /* Use flexbox layout */
+  /* align-items: center; Center items vertically */
+  margin-bottom: 30px;
+  padding: 10px; 
+  box-shadow:0px 0px 20px rgb(92, 12, 177);
+  margin-left:500px; 
+   margin-right:10px;
+   background-color:#1110106f;
+   width:500px;
+   
+   
+   
+ 
+}
+
+.comment-picture { /*resim*/
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  margin-right:300px;
+  margin-top:5px;
+
+}
+
+.comment-person {   /*isim yazan yer */
+  font-weight: italic;
+  color: #fff3f3;
+ margin:8px 0px 5px 80px;
+ font-size: large;
+ position:absolute;          
+
+flex-direction: row;
+/* border:2px solid pink */
+}
+
+.comment-p { /*yorum kısmı*/
+  font-weight:lighter;
+  color: white; 
+ padding: auto; 
+position:absolute;
+  margin:35px 500px 5px 80px;
+  display:flex;
+  flex-direction: row;
+  /* border:2px solid rgb(233, 83, 108); */
+ overflow:hidden;
+
+}
+
+.comment-form {
+  /* margin-bottom:300px; */
+  
+  box-shadow:0px 0px 20px rgb(92, 12, 177);
+  position:relative;  
+  width: 500px; /* Adjust the width as needed */
+  padding: 10px;
+  margin-left: 500px;
+  margin-right:auto;
+  height:330px;
+  /* background-color:white; */
+  margin-bottom:200px;
+  margin-top:80px;
+
+  
+}
+.comment-form--input[name="image"] {
+  flex-grow: 1;
+  padding: 5px;
+  border: 1px solid #1a181816;
+  border-radius: 4px;
+ 
+}
+.comment-form--input {/*your name kısmı*/
+  flex-grow: 1;
+  padding: 5px;
+  border-color: rgba(92, 12, 177, 0.508); 
+  border-radius: 4px;
+  background-color: rgba(0, 0, 0, 0);
+ color:white;
+  
+}
+
+.comment-form--textarea {/*your comment kısmı*/
+  margin-top:10px;
+  width: 90%;
+  padding: 8px;
+  margin-bottom: 25px; 
+  border-color: rgba(92, 12, 177, 0.83); 
+  border-radius: 4px;
+  background-color: rgba(0, 0, 0, 0);
+  color:white;
+}
+
+.comment-form button {
+  background-color:rgba(92, 12, 177, 0.83);
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  width: 60px;
+  height:60px;
+  cursor: pointer;
+  margin-left:410px;
+  
+}
+
+.comment-form button:hover {
+  background-color: rgb(92, 12, 177);
+}
+
+.comment-header{
+  margin-left: 690px;
+  font-style: oblique;
+  margin-top:60px;
+  margin-bottom:50px;
+  color:rgb(250, 250, 250);
+  
+  
+
+}

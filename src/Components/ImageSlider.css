@@ -1,0 +1,77 @@
+/* ImageSlider.css */
+.imageslider {
+    overflow: hidden;
+    width: 1519px;
+    margin: auto;
+  }
+  
+  .inner {
+    white-space: nowrap;
+    transition: transform 0.3s; /* animated changing */
+   
+    
+  }
+  
+  .image-card-item {
+    display: inline-block;
+    /* align-items: center; */
+    background-color: rgba(32, 22, 22, 0.272);
+    color: #fff;
+    padding-left: 60px;
+    height:300px;
+    padding-bottom:3px;
+    padding-top:10px;
+     width: 300px;
+    
+  
+  }
+  
+  .indicators {
+    /* button */
+    display: flex;
+    margin-left: 700px;
+   
+  }
+  
+  .indicators > button {
+    /* button style */
+    margin: 5px;
+    background-color: black;
+    border: 1px solid rgb(16, 24, 120);
+    box-shadow: 0px 0px 20px rgb(92, 12, 177);
+  }
+  
+  .image-photo{
+    position:absolute;
+    width:3x;
+    height: 311px;
+    color: black;
+    margin-bottom: 5px;
+    margin-top:-9px;
+    margin-left:"%50";
+    box-shadow: 0px 0px 20px black;
+    
+  }
+  .image-title{
+    position:absolute;
+    width:70px;
+    height:120px;
+    color: white;
+    margin-left:500px;
+    margin-top:1px;
+
+  
+    
+  }
+  .image-info{
+    position:absolute;
+    width:70px;
+    height:120px;
+    color: white;
+    margin-bottom: 1px;
+    margin-left:497px;
+    margin-top:70px;
+   
+  
+    
+  }

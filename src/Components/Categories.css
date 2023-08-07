@@ -1,0 +1,59 @@
+
+.categories {
+    padding: 20px;
+    background-color: black;
+    margin-left:30px;
+    margin-top:10px;
+    
+  }
+  .categories__box {
+    background-color: rgba(48, 46, 46, 0.5);
+    border: 1px solid white;
+    padding: 20px;
+    width: 315px;
+    height: 400px;
+    padding-right:10px;
+    padding-left:10px;
+    margin-left:50px;
+    
+  }
+  .categories__rate {
+    font-size: 14px;
+    color: white;
+    margin-bottom:10px;
+  }
+  
+  .categories__picture {
+    
+    width:100px;
+    height:150px;
+    color: black;
+    margin-bottom: 10px;
+    box-shadow: 0px 0px 20px black;
+ 
+    
+  }
+  .categories__title {
+  
+    font-size: 15px bold;  
+    color:white;
+    line-height: 1.5;
+    margin-top: 45px;
+    margin-top:10px;
+ 
+  }
+  
+  .categories__title--text{
+    text-align: justify!important ;
+    font-size: 20px;  
+    color:white;
+
+  }
+.categories-header{
+
+  color:white;
+}
+ 
+
+  
+  
