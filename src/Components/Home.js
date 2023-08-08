@@ -1,15 +1,12 @@
 import React, {useState} from 'react';
-
+import Header from './ResponsiveAppBar.js';
 import 'react-router-dom';
 import CommentSection from './CommentSection.js';
 import Card from './Card.js';
-import ImageSlider from'./ImageSlider.js';
-
+import ImageSlider,{Slider} from'./ImageSlider.js';
 import Modal from './Modal.js';
-
-
 import Modal1 from './Modal1.js';
-
+import styles from './Home.css';
 
 const Home=()=>{
 const cardsData= [
@@ -78,7 +75,23 @@ const cardsData2 = [
 
   },
 ];
+const [searchQuery, setSearchQuery] = useState(''); // arama sorgusu için 
+  const [filteredCards, setFilteredCards] = useState([]); // filtrelenmiş card datasını tutması için 
+  const handleSearch = (query) => { //aramaya göre card datalarını filtrele
+    const filteredData = cardsData.concat(cardsData2).filter((card) => {
+      return (
+        card.title.toLowerCase().includes(query.toLowerCase()) ||
+        card.info.toLowerCase().includes(query.toLowerCase())
+      );
+    });
+  
+    setFilteredCards(filteredData);
+    setIsSearchActive(query !== ''); // Arama sorgusu girildiyse true olarak ayarla
+    setShowFilteredData(query !== '' && filteredData.length > 0);
+  };
 
+  const [isSearchActive, setIsSearchActive] = useState(false);
+  const [showFilteredData, setShowFilteredData] = useState(false);
 
 const [showModal, setShowModal] = useState(false);
 const [selectedCard, setSelectedCard] = useState(cardsData[0]);
@@ -108,11 +121,23 @@ const handleModalClose1 = () => {
 return (
 <>
 <div class="full-page"></div>
+<input className="search-bar"
+  type="text"
+  placeholder="Search..."
+  value={searchQuery}
+  onChange={(e) => { //arama için bir şey yazdığımızda searchQuery i günceller ve handleSearchi çağırıp yazılana göre card datayı filtreler
+    setSearchQuery(e.target.value);
+    handleSearch(e.target.value);
+   
+  }}
+/>
 
-<div className="card-container">
+
   
+{showFilteredData && (
+  <div className="filtered-card">
       
-      {cardsData.map((card, index) => (
+{filteredCards.map((card, index)  => ( // cardlar üzerinden arama yapmak yerine filtrelenmiş değerler arasında arama yapar  
       
   <Card
           
@@ -122,11 +147,40 @@ return (
           rate={card.rate}
           title={card.title}
           info={card.info}
-          handleModalOpen={() => handleModalOpen(card)}
-
           
         />
       
+      ))}
+      </div>)}
+     
+    
+          <div >
+     {isSearchActive && (
+      <button className='search-button'
+        onClick={() => {
+          setSearchQuery('');
+          setFilteredCards([]);
+          setIsSearchActive(false); // Arama temizlendiğinde false olarak ayarla
+        }}
+      >
+        Clear Search
+      </button>
+    )}
+     </div>
+<div className="card-container">
+      
+      {cardsData.map((card, index) => (
+        <Card
+          
+          key={index}
+          imgSrc={card.imgSrc}
+          imgAlt={card.imgAlt}
+          rate={card.rate}
+          title={card.title}
+          info={card.info}
+          handleModalOpen={() => handleModalOpen(card)}
+        />
+
       ))}
        {showModal && (
         <Modal
@@ -134,12 +188,11 @@ return (
           imgAlt={selectedCard.imgAlt}
           title={selectedCard.title}
           info={selectedCard.info}
-          closeModal={handleModalClose}
+          closeModal1={handleModalClose}
         />
       )}
      </div>
-          
- 
+   
      
      <div className="card-container">
       
