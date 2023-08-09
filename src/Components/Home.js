@@ -188,7 +188,7 @@ return (
           imgAlt={selectedCard.imgAlt}
           title={selectedCard.title}
           info={selectedCard.info}
-          closeModal1={handleModalClose}
+          closeModal={handleModalClose}
         />
       )}
      </div>
